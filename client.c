@@ -6,7 +6,7 @@
 /*   By: nsassenb <nsassenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:41:02 by nsassenb          #+#    #+#             */
-/*   Updated: 2023/10/21 17:26:36 by nsassenb         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:29:03 by nsassenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ int	ft_send_char(char c, pid_t pid)
 			if (kill(pid, SIGUSR2))
 				return (1);
 		while (g_success != 1 && timeout < 30)
-			if (sleep(timeout++) == -1)
-				return (1);
+			pause();
 		c <<= 1;
 		i++;
 	}
