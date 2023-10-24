@@ -28,12 +28,12 @@ $(LIBFT):
 
 clean:
 	(cd printf && make clean)
-	rm -f $(C_OBJ) $(S_OBJ) $(CB_OBJ) $(SB_OBJ)
+	rm -f $(C_OBJ) $(S_OBJ)
 
 fclean: clean
 	(cd printf && make fclean)
-	rm -f $(SERVER) $(CLIENT) $(CLIENT_BON) $(SERVER_BON)
+	rm -f $(SERVER) $(CLIENT)
 
 re: fclean all
 
-.PHONY: clean fclean re
+.PHONY: clean fclean re bonus
