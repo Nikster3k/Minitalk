@@ -15,8 +15,8 @@ SB_SRC = server_bonus.c
 C_OBJ = $(C_SRC:.c=.o)
 S_OBJ = $(S_SRC:.c=.o)
 
-CB_OBJ = $(C_SRC:.c=.o)
-SB_OBJ = $(S_SRC:.c=.o)
+CB_OBJ = $(CB_SRC:.c=.o)
+SB_OBJ = $(SB_SRC:.c=.o)
 
 all: $(CLIENT) $(SERVER)
 

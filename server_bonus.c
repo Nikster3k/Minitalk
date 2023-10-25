@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsassenb <nsassenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:41:29 by nsassenb          #+#    #+#             */
-/*   Updated: 2023/10/25 14:46:04 by nsassenb         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:36:27 by nsassenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 char	*g_message = NULL;
 
@@ -44,8 +44,6 @@ static	int	ft_add_char(char c)
 
 static void	ft_handle_char(siginfo_t *info, char *c, int *count)
 {
-	if (ft_add_char(*c))
-		ft_exit_on_fail(EXIT_FAILURE);
 	if (*c == '\0')
 	{
 		ft_printf("%s\n", g_message);
@@ -54,6 +52,9 @@ static void	ft_handle_char(siginfo_t *info, char *c, int *count)
 		free(g_message);
 		g_message = NULL;
 	}
+	else
+		if (ft_add_char(*c))
+			ft_exit_on_fail(EXIT_FAILURE);
 	(*count) = 0;
 	(*c) = 0;
 }
